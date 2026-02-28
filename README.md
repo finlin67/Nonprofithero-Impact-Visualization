@@ -1,11 +1,36 @@
-<div align="center">
+# NonProfitHero - Impact Visualization
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+This project features a high-fidelity recreation of the NonProfitHero landing page with a specialized, animated React component for the "Global Impact" data visualization.
 
-  <h1>Built with AI Studio</h2>
+## Description
+The core focus is the `<NGOTile />` component. This component visualizes the "Donor Journey" using a circular loop concept. It utilizes SVG for precision drawing and Framer Motion for organic animations (drawing path arcs, pulsing indicators, and floating cards). The tile is fully responsive and self-contained.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Tech Stack
+*   **Framework:** React 18+ (TypeScript)
+*   **Styling:** Tailwind CSS (Arbitrary values used for color portability)
+*   **Animation:** Framer Motion
+*   **Icons:** Lucide React (replacing Google Material Symbols)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Usage
+1.  Ensure you have dependencies installed:
+    ```bash
+    npm install framer-motion lucide-react
+    ```
+2.  Import the tile into any layout:
+    ```tsx
+    import NGOTile from './components/NGOTile';
 
-</div>
+    export default function Dashboard() {
+      return (
+        <div className="w-[600px]">
+           <NGOTile />
+        </div>
+      )
+    }
+    ```
+3.  The tile will automatically fit the width of its parent container while maintaining a 1:1 aspect ratio.
+
+## Component Features
+*   **Isolated Styles:** Does not rely on external `tailwind.config.js` theme extensions.
+*   **SVG Animation:** The gradient arc draws itself on mount.
+*   **Interactive Elements:** The bottom-right card has a subtle hover float effect.
